@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link in Bio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #f5f5f5;
+            --text-color: #333;
+            --button-bg: #ffffff;
+            --button-hover: #f0f0f0;
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a1a;
+            --text-color: #ffffff;
+            --button-bg: #2d2d2d;
+            --button-hover: #3d3d3d;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Container */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Profile Section */
+        .profile {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: auto; /* Maintain aspect ratio */;
+            border-radius: 0;
+            margin-bottom: 20px;
+            border: none;
+            padding: 3px;
+        }
+
+        .profile h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .profile p {
+            color: var(--text-color);
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        /* Links Section */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .link-button {
+            background-color: var(--button-bg);
+            padding: 16px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-button:hover {
+            background-color: var(--button-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Dark Mode Toggle */
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            padding: 8px;
+            border-radius: 50%;
+            background-color: var(--button-bg);
+            color: var(--text-color);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            .profile-img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌓</button>
+    
+    <div class="container">
+        <div class="profile">
+            <img src="logo.png" alt="Know Your Bhilai" class="profile-img" id="logo">
+            <h1>Know Your Bhilai</h1>
+            <p>Engage, Explore, Enjoy!</p>
+        </div>
+
+        <div class="links">
+            <a href="https://www.instagram.com/ky.bhilai/" class="link-button">Instagram</a>
+            <a href="https://x.com/Deepaksharmazs/" class="link-button">Twitter</a>
+            <a href="https://www.linkedin.com/in/aditya-tiwari-445a27245?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " class="link-button">LinkedIn</a>
+            <a href="#" class="link-button">YouTube</a>
+            <a href="#" class="link-button">Personal Website</a>
+        </div>
+
+        <footer class="footer">
+            <p>© 2023 Know Your Bhilai. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            const logo = document.getElementById('logo');
+            
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                logo.src = 'logodark.png'; // Dark mode logo
+            } else {
+                logo.src = 'logo.png'; // Light mode logo
+            }
+        }
+    </script>
+</body>
+</html>
